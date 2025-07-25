@@ -89,6 +89,7 @@ function App() {
         <a href="#home"> [ Home ] </a>
         <a href="#about"> [ About ] </a>
         <a href="#contact"> [ Contact ] </a>
+        <a href="#blog"> [ Blog ] </a>
       </nav>
       <h1 className="name">
         [Sheng Chang Li]
@@ -129,7 +130,25 @@ function App() {
           onChange={(e) => {
             const value = e.target.value;
             setInputValue(value); // Update input field value
-            if (value.startsWith('/')) {
+
+            if (value.startsWith(':')) {
+              // Handle commands
+              const command = value.substring(1).toLowerCase();
+              switch (command) {
+                case 'home':
+                case 'about':
+                case 'contact':
+                case 'blog':
+                  window.location.hash = command;
+                  setInputValue(''); // Clear input after command
+                  setSearchTerm(''); // Clear any active search
+                  break;
+                default:
+                  // Invalid command, do nothing or provide feedback
+                  break;
+              }
+            } else if (value.startsWith('/')) {
+              // Handle search
               setSearchTerm(value.substring(1)); // Set search term if starts with /
             } else {
               setSearchTerm(''); // Clear search term otherwise
