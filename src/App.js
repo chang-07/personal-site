@@ -1,10 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [inputValue, setInputValue] = useState(''); // New state for input field value
+  const [currentPage, setCurrentPage] = useState('home'); // New state for current page
+
+  // Effect to update currentPage based on URL hash
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.substring(1); // Remove #
+      setCurrentPage(hash || 'home'); // Default to 'home' if hash is empty
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange(); // Call once on mount to set initial page
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
 
   const cardData = [
     {
@@ -80,14 +97,6 @@ function App() {
         CS + Ivey + Scholar's Electives @ Western University
       </h3>
 
-      <input
-        type="text"
-        placeholder="Search Experiences"
-        className="search-bar"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-
       <div className={`card-container ${filteredCards.length === 1 ? 'single-card-align-left' : ''}`}>
         {filteredCards.map((card) => (
           <div
@@ -110,6 +119,25 @@ function App() {
           </div>
         </div>
       )}
+
+      <div className="bottom-search-bar-container">
+        <span className="mode-indicator">NORMAL:{currentPage}</span>
+        <input
+          type="text"
+          className="bottom-search-bar"
+          value={inputValue} // Use inputValue state
+          onChange={(e) => {
+            const value = e.target.value;
+            setInputValue(value); // Update input field value
+            if (value.startsWith('/')) {
+              setSearchTerm(value.substring(1)); // Set search term if starts with /
+            } else {
+              setSearchTerm(''); // Clear search term otherwise
+            }
+          }}
+          autoFocus // Add autoFocus here
+        />
+      </div>
     </div>
   );
 }

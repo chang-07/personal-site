@@ -41,19 +41,41 @@
   color: white;
 }
 
-.search-bar {
-  width: 40%;
-  max-width: 300px;
-  padding: 5px;
-  margin-top: 15px;
-  margin-bottom: 10px; /* Reverted to 10px */
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18); /* Matched navbar border color */
-  font-size: 0.8rem;
+.bottom-search-bar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: black;
-  color: white; /* Changed to white */
-  outline: none; /* Corrected to none */
-  font-family: monospace; /* Changed font to monospace */
+  padding: 5px 10px; /* Add horizontal padding */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  z-index: 1000;
+}
+
+.mode-indicator {
+  color: white;
+  font-size: 1rem;
+  margin-right: 10px; /* Space between text and input */
+}
+
+.bottom-search-bar {
+  width: 100%; /* Take full width of container */
+  padding: 5px; /* Smaller padding */
+  border: none; /* Remove default border */
+  background: transparent; /* Transparent background */
+  color: white;
+  font-size: 1rem;
+  outline: none; /* Remove outline on focus */
+  text-align: left; /* Start text from left */
+  font-family: monospace; /* Monospace font */
+  caret-color: white; /* Make cursor visible */
+  caret-width: 2px; /* Make caret thicker */
+}
+
+.bottom-search-bar:focus {
+  border-right: 0px solid white; /* Thicker blinking indicator */
 }
 
 .card-container {
