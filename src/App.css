@@ -1,0 +1,135 @@
+.App {
+  text-align: center;
+  background-color: black;
+  padding: 20px; /* Add overall padding to the app container */
+}
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  background: black;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 1000;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem; /* Add padding to navbar links */
+  outline: none; /* Remove outline */
+}
+
+.name {
+  font-size: 5rem;
+  margin-top: 120px; /* Increased margin for more top padding */
+  margin-bottom: 20px; /* Add margin below name */
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px; /* Increased margin below subtitle */
+  color: white;
+}
+
+.search-bar {
+  width: 40%;
+  max-width: 300px;
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px; /* Reverted to 10px */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Matched navbar border color */
+  font-size: 0.8rem;
+  background-color: black;
+  color: white; /* Changed to white */
+  outline: none; /* Corrected to none */
+  font-family: monospace; /* Changed font to monospace */
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px; /* Increased gap between cards */
+  margin-top: 30px;
+  padding-bottom: 120px; /* Increased padding for more blank space at the bottom */
+}
+
+.card {
+  width: 320px; /* Slightly increased card width */
+  height: 220px; /* Slightly increased card height */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow */
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.07); /* Slightly increased hover scale */
+}
+
+.card-title {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* More opaque background for readability */
+  padding: 12px 0; /* Increased padding */
+  font-size: 1.3rem; /* Slightly larger font size */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85); /* Darker overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-content {
+  background: #222; /* Darker background for popup */
+  color: white;
+  padding: 40px; /* Increased padding */
+  border-radius: 15px; /* More rounded corners */
+  text-align: center;
+  max-width: 600px; /* Increased max-width */
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Larger shadow */
+}
+
+.popup-content button {
+  margin-top: 30px; /* Increased margin */
+  padding: 12px 25px; /* Increased padding */
+  border: none;
+  background-color: #0099ff; /* Brighter blue for button */
+  color: white;
+  border-radius: 8px; /* More rounded button */
+  cursor: pointer;
+  outline: none; /* Remove outline */
+  transition: background-color 0.2s;
+}
+
+.popup-content button:hover {
+  background-color: #007acc;
+}
