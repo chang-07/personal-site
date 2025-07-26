@@ -88,7 +88,7 @@ function App() {
     {
       id: 2,
       title: 'JAMHacks 9',
-      imageUrl: 'https://lh3.googleusercontent.com/pw/AP1GczOg8Q-29tLf2X6qYH778OlMq70dfv169mp4Cfe-La8oMqwtYirotqrOGvvYARyji23M5_BEg9NsPPmdxQpPKxwKfUc-G_Kvkp4aq3e2RKrJci_KN4CVyWcfLiprIjclE7dpMjz0RvE-MuYjeLSjkxdO=w2714-h2036-s-no?authuser=0',
+      imageUrl: 'https://i.imgur.com/MtaZISS.jpeg',
       content: 'I served as the Finance Lead for JAMHacks 9 in 2025, leading sponsorships/budgeting for Canada\'s largest highschool hackathon. Within the role, I worked to secure over $10,000 in sponsorships — including firms like the James Dyson Foundation and the University of Waterloo — along with budgeting for the event given no revenue and expansive costs (full catering, lanyards, venue costs, etc)\nwww.jamhacks.ca',
     },
     {

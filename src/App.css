@@ -135,8 +135,8 @@
 }
 
 .card {
-  width: 320px; /* Slightly increased card width */
-  height: 220px; /* Slightly increased card height */
+  width: 480px; /* Slightly increased card width */
+  height: 330px; /* Slightly increased card height */
   background-size: cover;
   background-position: center;
   border-radius: 10px;
