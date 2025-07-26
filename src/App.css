@@ -6,6 +6,7 @@
                     repeating-linear-gradient(90deg, #282828 0px, #282828 0.5px, transparent 0.5px, transparent 20px);
   background-size: 20px 20px;
   background-position: center center;
+  transform: none; /* Explicitly remove any inherited transforms */
 }
 
 .navbar {
@@ -22,7 +23,7 @@
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 1000;
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.6);
 }
 
 .navbar a {
@@ -37,6 +38,7 @@
   margin-top: 120px; /* Increased margin for more top padding */
   margin-bottom: 20px; /* Add margin below name */
   color: white;
+  
 }
 
 .subtitle {
@@ -146,6 +148,7 @@
   transition: transform 0.2s;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow */
   overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.2);
 }
 
 .card:hover {
@@ -175,30 +178,70 @@
 }
 
 .popup-content {
-  background: #222; /* Darker background for popup */
-  color: white;
-  padding: 40px; /* Increased padding */
-  border-radius: 15px; /* More rounded corners */
-  text-align: center;
-  max-width: 600px; /* Increased max-width */
+  background: black; /* Black background */
+  color: white; /* White text */
+  padding: 20px; /* Adjusted padding */
+  border-radius: 0; /* Square corners */
+  border: 2px solid white; /* White border */
+  text-align: left; /* Align text to left */
+  max-width: 500px; /* Adjusted max-width */
+  width: 90%; /* Ensure it's responsive */
   position: relative;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Larger shadow */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* White glow effect */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
 }
 
-.popup-content button {
-  margin-top: 30px; /* Increased margin */
-  padding: 12px 25px; /* Increased padding */
-  border: none;
-  background-color: #0099ff; /* Brighter blue for button */
-  color: white;
-  border-radius: 8px; /* More rounded button */
+.popup-content h2 {
+  color: white; /* White heading */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  color: white; /* White text */
+  margin-bottom: 15px;
+}
+
+.popup-close-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: white; /* White 'x' */
+  font-size: 1.5rem;
   cursor: pointer;
-  outline: none; /* Remove outline */
-  transition: background-color 0.2s;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5px;
+  border: 1px solid white;
+  background-color: black;
 }
 
-.popup-content button:hover {
-  background-color: #007acc;
+.popup-close-button:hover {
+  background-color: #333;
+}
+
+.about-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 100px auto 50px auto;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.3);
+}
+
+.about-box h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-box li {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
 }
 
 .contact-icons {
@@ -218,4 +261,159 @@
 
 .contact-icons a:hover {
   color: #0099ff;
+}
+
+.blog-container {
+  max-width: 800px;
+  margin: 100px auto 50px auto;
+  padding: 20px;
+  background-color: #1a1a1a; /* Darker background for terminal */
+  border: 2px solid #555; /* Grey border */
+  border-radius: 5px;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.2); 
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+}
+
+.blog-post {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #555; /* Dashed grey line */
+  text-align: left;
+  color: #eee; /* Light grey text */
+}
+
+.blog-post:last-child {
+  border-bottom: none;
+}
+
+.blog-post h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: white; /* White heading */
+}
+
+.blog-post-date {
+  font-size: 0.8rem;
+  color: #aaa; /* Lighter grey for date */
+  margin-bottom: 10px;
+}
+
+.blog-post-image {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Ensures the image behaves as a block element */
+  margin: 0 auto 20px auto; /* Centers the image and adds bottom margin */
+  border-radius: 8px;
+  object-fit: contain; /* Ensures the entire image is visible within its bounds */
+}
+
+.dashboard-container {
+  max-width: 800px; /* Adjust max-width for 2x2 grid */
+  margin: 100px auto 50px auto;
+  padding: 20px;
+  background-color: #1a1a1a; /* Darker background for terminal */
+  border: 2px solid #555; /* Grey border */
+  border-radius: 5px;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.2); /* Consistent shadow */
+  color: #eee; /* Light grey text */
+  text-align: left; /* Align text to left for terminal look */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+}
+
+.discord-status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+  gap: 10px; /* Smaller gap */
+  margin-top: 10px; /* Smaller margin */
+}
+
+.discord-box {
+  background-color: #1a1a1a; /* Same as container for seamless look */
+  padding: 10px; /* Smaller padding */
+  border-radius: 5px;
+  border: 1px dashed #555; /* Dashed grey border */
+  box-shadow: none; /* Remove individual box shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to left */
+  justify-content: flex-start;
+  min-height: 100px; /* Smaller min-height */
+  color: #eee; /* Light grey text */
+}
+
+.discord-box h3 {
+  margin-top: 0;
+  color: white; /* White heading */
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.discord-box p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #aaa; /* Lighter grey for details */
+}
+
+.github-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px dashed #555;
+}
+
+.github-section h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  width: 100%; /* Make heading take full width */
+}
+
+.github-contributions-graph {
+  width: 100%; /* Take full width */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto; /* Center and add bottom margin */
+  border: 1px solid #555;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.github-commit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Take full width */
+  box-sizing: border-box;
+}
+
+.github-commit-item {
+  background-color: #222;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.github-commit-item p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.github-commit-item strong {
+  color: white;
+}
+
+.github-commit-item a {
+  color: #0099ff;
+  text-decoration: none;
+}
+
+.github-commit-item a:hover {
+  text-decoration: underline;
+}
+
+.commit-date {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
 }
