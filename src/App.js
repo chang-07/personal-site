@@ -121,6 +121,11 @@ function App() {
       imageUrl: 'https://i.imgur.com/Qcg0Uq7.png',
       content: 'Built a Java-only Chess Engine utilizing Java Swing.\n https://github.com/chang-07/chessmaster11',
     },
+    {
+      id: 8, 
+      title: 'Monte Carlo Pricer (Unpolished)',
+      content: 'Built a Monte Carlo Pricer utilizing cpp, Crow, and React. Rather unpolished but mainly just for educational purposes + learning crow\nhttps://github.com/chang-07/monte-carlo'
+    }
     
   ];
 
@@ -266,13 +271,13 @@ function App() {
                 )}
               </div>
 
-              {/* VSCode/Cursor Box */}
+              {/* VSCode/Cursor/Neovim Box */}
               <div className="discord-box vscode-box">
                 <h3>Coding</h3>
-                {discordStatus.activities.some(activity => activity.name === 'Visual Studio Code' || activity.name === 'Cursor') ? (
+                {discordStatus.activities.some(activity => activity.name === 'Visual Studio Code' || activity.name === 'Cursor' || activity.name === 'Neovim') ? (
                   <>
                     {discordStatus.activities.map(activity => {
-                      if (activity.name === 'Visual Studio Code' || activity.name === 'Cursor') {
+                      if (activity.name === 'Visual Studio Code' || activity.name === 'Cursor' || activity.name === 'Neovim') {
                         return (
                           <div key={activity.id}>
                             <p><strong>{activity.name}</strong></p>
