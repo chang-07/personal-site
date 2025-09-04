@@ -257,21 +257,6 @@ function App() {
         <div className="dashboard-container">
           {discordStatus ? (
             <div className="discord-status-grid">
-              {/* Spotify Box */}
-              <div className="discord-box spotify-box">
-                <h3>Spotify</h3>
-                {discordStatus.listening_to_spotify && discordStatus.spotify ? (
-                  <>
-                    <p><strong>{discordStatus.spotify.song}</strong></p>
-                    <p>by {discordStatus.spotify.artist}</p>
-                    <p>on {discordStatus.spotify.album}</p>
-                  </>
-                ) : (
-                  <p>Not listening to Spotify</p>
-                )}
-              </div>
-
-              {/* VSCode/Cursor/Neovim Box */}
               <div className="discord-box vscode-box">
                 <h3>Coding</h3>
                 {discordStatus.activities.some(activity => activity.name === 'Visual Studio Code' || activity.name === 'Cursor' || activity.name === 'Neovim') ? (
