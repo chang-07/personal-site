@@ -104,28 +104,35 @@ function App() {
       content: 'Won First for Best Use of MongoDB at Hack The 6ix, Canada\'s largest summer hackathon. Built a plant logging app that uses Gemini and key APIs to predict and provide specific help for different plants, these plants identified using the PlantNet computer vision service. In addition, we implemented and integrated a dataase of over 650,000 plants, interactive and cached across a dynamic world map. \nhttps://devpost.com/software/iogarden',
     },
     {
-      id: 5,
+      id: 5, 
+      title: 'PopChat (WDS Project Manager Submission)',
+      imageUrl: 'https://i.imgur.com/QbDZg79.png',
+      content: 'Built a makeshift social media site using the MERN stack for my Western Dev Soc PM application, Stores users and global bubbles within a MongoDB cluster, calls upon login, and uses a really janky physics model to display bubbles along an open plane. \n https://github.com/chang-07/wds-oa'
+    },
+    {
+      id: 6,
       title: 'Black-Scholes Options Pricing',
       imageUrl: 'https://i.imgur.com/8J2opAh.png',
       content: 'Built a dynamic Black-Scholes-Merton Options Pricing Calculator for both calls and puts — set with heatmaps that track P&L given the parameters of spot price and volatility. Export section a work in progress.\nhttps://github.com/chang-07/black-scholes-merton',
     },
     {
-      id: 6,
+      id: 7,
       title: 'Economic Inequality @ UWO',
       imageUrl: 'https://i.imgur.com/HZow7Zn.png',
       content: 'Spent 2 years working on a Research Project with the Statistics Department at the University of Western Ontario. Focused on using chi square statistics and advanced indices like the Atkinson Index to chart economic inequality across a wide expanse of indicators (secondary school graduation percentae, household income, etc) and logged along a dynamic map of Toronto\'s 25 wards to visualize income inequality. Adviced within a TDSB research board as to how to eliminate educational inequality across the district. Pending publishing.',
     },
     {
-      id: 7,
+      id: 8,
       title: 'ChessMaster',
       imageUrl: 'https://i.imgur.com/Qcg0Uq7.png',
       content: 'Built a Java-only Chess Engine utilizing Java Swing.\n https://github.com/chang-07/chessmaster11',
     },
     {
-      id: 8, 
+      id: 9, 
       title: 'Monte Carlo Pricer (Unpolished)',
       content: 'Built a Monte Carlo Pricer utilizing cpp, Crow, and React. Rather unpolished but mainly just for educational purposes + learning crow\nhttps://github.com/chang-07/monte-carlo'
-    }
+    },
+
     
   ];
 
@@ -225,15 +232,29 @@ function App() {
             ))}
           </div>
 
-          {showPopup && selectedCard && (
-            <div className="popup-overlay" onClick={closePopup}>
-              <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                <h2>{selectedCard.title}</h2>
-                <p>{selectedCard.content}</p>
-                <span className="popup-close-button" onClick={closePopup}>[x]</span>
-              </div>
-            </div>
-          )}
+          {showPopup && selectedCard && (() => {
+            const parseContent = (content) => {
+              const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+)/g;
+              const urls = content.match(urlRegex);
+              if (urls) {
+                  const lastUrl = urls[urls.length - 1];
+                  const text = content.replace(lastUrl, '').trim();
+                  return { text, url: lastUrl };
+              }
+              return { text: content, url: null };
+            };
+            const { text, url } = parseContent(selectedCard.content);
+            return (
+                <div className="popup-overlay" onClick={closePopup}>
+                    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+                        <h2>{selectedCard.title}</h2>
+                        <p>{text}</p>
+                        {url && <a href={url.startsWith('www') ? `http://${url}` : url} target="_blank" rel="noopener noreferrer" className="popup-link">{url}</a>}
+                        <span className="popup-close-button" onClick={closePopup}>[x]</span>
+                    </div>
+                </div>
+            );
+          })()}
         </>
       )}
 
