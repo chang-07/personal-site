@@ -117,18 +117,12 @@ function App() {
     },
     {
       id: 7,
-      title: 'Economic Inequality @ UWO',
-      imageUrl: 'https://i.imgur.com/HZow7Zn.png',
-      content: 'Spent 2 years working on a Research Project with the Statistics Department at the University of Western Ontario. Focused on using chi square statistics and advanced indices like the Atkinson Index to chart economic inequality across a wide expanse of indicators (secondary school graduation percentae, household income, etc) and logged along a dynamic map of Toronto\'s 25 wards to visualize income inequality. Adviced within a TDSB research board as to how to eliminate educational inequality across the district. Pending publishing.',
-    },
-    {
-      id: 8,
       title: 'ChessMaster',
       imageUrl: 'https://i.imgur.com/Qcg0Uq7.png',
       content: 'Built a Java-only Chess Engine utilizing Java Swing.\n https://github.com/chang-07/chessmaster11',
     },
     {
-      id: 9, 
+      id: 8, 
       title: 'Monte Carlo Pricer (Unpolished)',
       content: 'Built a Monte Carlo Pricer utilizing cpp, Crow, and React. Rather unpolished but mainly just for educational purposes + learning crow\nhttps://github.com/chang-07/monte-carlo'
     },
@@ -182,6 +176,9 @@ function App() {
       content: "At my first (actual) hackathon, my team and I managed to take home the MLH Best Use of MongoDB amongst 500+ hackers for our project IO Garden. It was a really fun experience and helped me refresh my very rusty React skills a ton, and I also had the chance to connect and meet with a lot of cool people — especially @Syed Shahzad Raza and the rest of the team at Deloitte. Want to see our award winning project? Click the link here: https://devpost.com/software/iogarden",
       imageUrl: "https://media.discordapp.net/attachments/1394151692723028049/1396478009883496488/image.png?ex=6884d27e&is=688380fe&hm=49f4e42da68ee3960b5915fe05dd9d62a0df0d75d1d8305d2163a08133fe9a91&=&format=webp&quality=lossless&width=2794&height=1725",
     },
+
+
+
     {
       id: 1,
       title: 'Hello World',
@@ -232,29 +229,15 @@ function App() {
             ))}
           </div>
 
-          {showPopup && selectedCard && (() => {
-            const parseContent = (content) => {
-              const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+)/g;
-              const urls = content.match(urlRegex);
-              if (urls) {
-                  const lastUrl = urls[urls.length - 1];
-                  const text = content.replace(lastUrl, '').trim();
-                  return { text, url: lastUrl };
-              }
-              return { text: content, url: null };
-            };
-            const { text, url } = parseContent(selectedCard.content);
-            return (
-                <div className="popup-overlay" onClick={closePopup}>
-                    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                        <h2>{selectedCard.title}</h2>
-                        <p>{text}</p>
-                        {url && <a href={url.startsWith('www') ? `http://${url}` : url} target="_blank" rel="noopener noreferrer" className="popup-link">{url}</a>}
-                        <span className="popup-close-button" onClick={closePopup}>[x]</span>
-                    </div>
-                </div>
-            );
-          })()}
+          {showPopup && selectedCard && (
+            <div className="popup-overlay" onClick={closePopup}>
+              <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+                <h2>{selectedCard.title}</h2>
+                <p>{selectedCard.content}</p>
+                <span className="popup-close-button" onClick={closePopup}>[x]</span>
+              </div>
+            </div>
+          )}
         </>
       )}
 
