@@ -87,45 +87,58 @@ function App() {
     },
     {
       id: 2,
+      title: 'C++ Orderbook',
+      imageUrl: 'https://i.imgur.com/8d9y2PJ.png',
+      content: 'Created a full L3 orderbook in C++ that processes all order types (FillandKill, GoodForDay, etc). Created unit testing wiht gtest, a python backtester to test on historical data from Coinbase, and data visualization with a React Frontend',
+    },
+    {
+      id: 3,
+      title: 'P.O.T.S',
+      imageUrl: 'https://i.imgur.com/f2OESBp.jpeg',
+      content: 'Online interviewer that integrates a full coding environment, testcase suite, facial recognition metrics, and ElevenLabs and Gemini integration.'
+    },
+    {
+      id: 4,
       title: 'JAMHacks 9',
       imageUrl: 'https://i.imgur.com/MtaZISS.jpeg',
       content: 'I served as the Finance Lead for JAMHacks 9 in 2025, leading sponsorships/budgeting for Canada\'s largest highschool hackathon. Within the role, I worked to secure over $10,000 in sponsorships — including firms like the James Dyson Foundation and the University of Waterloo — along with budgeting for the event given no revenue and expansive costs (full catering, lanyards, venue costs, etc)\nwww.jamhacks.ca',
     },
     {
-      id: 3,
+      id: 5,
       title: 'GeeseHacks',
       imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fuwimprint.ca%2Fwp-content%2Fuploads%2F2025%2F01%2Fgeesehacks.jpg&f=1&nofb=1&ipt=48ac043625aea68876f67d7e4ebb035c5fc6ee872eca24bfd141c3b7fd753194',
       content: 'Currently the Sponsorships Lead for GeeseHacks, the second largest Hackathon at the University of Waterloo — backed by Google, Amazon, Sunlife, and the Math Endowment Fund. In progress...\n www.geesehacks.com',
     },
     {
-      id: 4,
+      id: 6,
       title: 'IOGarden',
       imageUrl: 'https://media.discordapp.net/attachments/1394151692723028049/1396478009883496488/image.png?ex=6884d27e&is=688380fe&hm=49f4e42da68ee3960b5915fe05dd9d62a0df0d75d1d8305d2163a08133fe9a91&=&format=webp&quality=lossless&width=2794&height=1725',
       content: 'Won First for Best Use of MongoDB at Hack The 6ix, Canada\'s largest summer hackathon. Built a plant logging app that uses Gemini and key APIs to predict and provide specific help for different plants, these plants identified using the PlantNet computer vision service. In addition, we implemented and integrated a dataase of over 650,000 plants, interactive and cached across a dynamic world map. \nhttps://devpost.com/software/iogarden',
     },
     {
-      id: 5, 
+      id: 7, 
       title: 'PopChat (WDS Project Manager Submission)',
       imageUrl: 'https://i.imgur.com/QbDZg79.png',
       content: 'Built a makeshift social media site using the MERN stack for my Western Dev Soc PM application, Stores users and global bubbles within a MongoDB cluster, calls upon login, and uses a really janky physics model to display bubbles along an open plane. \n https://github.com/chang-07/wds-oa'
     },
     {
-      id: 6,
+      id: 8,
       title: 'Black-Scholes Options Pricing',
       imageUrl: 'https://i.imgur.com/8J2opAh.png',
       content: 'Built a dynamic Black-Scholes-Merton Options Pricing Calculator for both calls and puts — set with heatmaps that track P&L given the parameters of spot price and volatility. Export section a work in progress.\nhttps://github.com/chang-07/black-scholes-merton',
     },
     {
-      id: 7,
+      id: 9,
       title: 'ChessMaster',
       imageUrl: 'https://i.imgur.com/Qcg0Uq7.png',
       content: 'Built a Java-only Chess Engine utilizing Java Swing.\n https://github.com/chang-07/chessmaster11',
     },
     {
-      id: 8, 
+      id: 10, 
       title: 'Monte Carlo Pricer (Unpolished)',
       content: 'Built a Monte Carlo Pricer utilizing cpp, Crow, and React. Rather unpolished but mainly just for educational purposes + learning crow\nhttps://github.com/chang-07/monte-carlo'
     },
+
 
     
   ];
